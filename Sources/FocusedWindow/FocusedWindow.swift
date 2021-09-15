@@ -14,7 +14,6 @@ public struct FocusedWindow {
     public mutating func refresh() {
         let activeApp = NSWorkspace.shared.menuBarOwningApplication!
         let activeWindowBundleIdentifier = activeApp.bundleIdentifier!
-        print(activeWindowBundleIdentifier)
         let activeWindowId = activeApp.processIdentifier
         
         let options = CGWindowListOption(arrayLiteral: CGWindowListOption.excludeDesktopElements, CGWindowListOption.optionOnScreenOnly)
