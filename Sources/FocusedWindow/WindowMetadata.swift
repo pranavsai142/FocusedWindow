@@ -18,6 +18,12 @@ public struct WindowMetadata {
         self.windowData = windowData
     }
     
+    public init() {
+        self.windowId = 0
+        self.windowBundleIdentifier = ""
+        self.windowData = NSDictionary()
+    }
+    
     public func getId() -> Int32 {
         return windowId
     }

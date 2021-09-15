@@ -7,6 +7,11 @@ public struct FocusedWindow {
     public var currentFocus : WindowMetadata
 //    activeApplication instance. Optional type because there may be a nil active app
     public init() {
+        currentFocus = WindowMetadata()
+        refresh()
+    }
+    
+    public mutating func refresh() {
         let activeApp = NSWorkspace.shared.frontmostApplication!
         let activeWindowBundleIdentifier = activeApp.bundleIdentifier!
         let activeWindowId = activeApp.processIdentifier
@@ -23,7 +28,7 @@ public struct FocusedWindow {
             }
         }
 
-        currentFocus = WindowMetadata(windowId: activeWindowId, windowBundleIdentifier: activeWindowBundleIdentifier, windowData: activeWindowData)
+        self.currentFocus = WindowMetadata(windowId: activeWindowId, windowBundleIdentifier: activeWindowBundleIdentifier, windowData: activeWindowData)
         
     }
     
