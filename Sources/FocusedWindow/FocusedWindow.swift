@@ -12,7 +12,7 @@ public struct FocusedWindow {
     }
     
     public mutating func refresh() {
-        let activeApp = NSWorkspace.shared.frontmostApplication!
+        let activeApp = NSWorkspace.shared.menuBarOwningApplication!
         let activeWindowBundleIdentifier = activeApp.bundleIdentifier!
         print(activeWindowBundleIdentifier)
         let activeWindowId = activeApp.processIdentifier
