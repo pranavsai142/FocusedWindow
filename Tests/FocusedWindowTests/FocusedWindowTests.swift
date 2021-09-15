@@ -3,7 +3,6 @@ import XCTest
 
 final class FocusedWindowTests: XCTestCase {
 
-//
 //    static var allTests = [
 //        ("testExample", testExample),
 //    ]
