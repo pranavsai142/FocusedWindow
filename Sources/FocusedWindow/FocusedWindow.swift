@@ -1,3 +1,6 @@
-struct FocusedWindow {
-    var text = "Hello, World!"
+public struct FocusedWindow {
+    
+    public init() {
+        
+    }
 }
