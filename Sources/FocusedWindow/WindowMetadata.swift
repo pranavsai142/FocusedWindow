@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WindowMetadata {
+public struct WindowMetadata: Equatable {
     private let windowId : Int32
     private let windowBundleIdentifier : String
     private let windowData : NSDictionary
@@ -56,5 +56,9 @@ public struct WindowMetadata {
     
     public func getLevel() -> Int {
         return windowData.value(forKey: "kCGWindowLayer") as! Int
+    }
+    
+    public static func == (lhs: WindowMetadata, rhs: WindowMetadata) -> Bool {
+        return lhs.getId() == rhs.getId()
     }
 }
